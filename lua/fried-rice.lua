@@ -2,10 +2,10 @@ local M = {}
 
 ---@class fried_rice_config
 ---@field search_dirs table
----@field quick_paths table
+---@field quick_maps table
 
 ---@type fried_rice_config
-local config = { search_dirs = {}, quick_paths = {} }
+local config = { search_dirs = {}, quick_maps = {} }
 
 -- Set plugin config options
 ---@param opts? fried_rice_config
@@ -30,7 +30,7 @@ vim.api.nvim_create_user_command("Config", function(opts)
 		return
 	end
 
-	local filepath = config.quick_paths[opts.fargs[1]]
+	local filepath = config.quick_maps[opts.fargs[1]]
 	if filepath == nil then
 		filepath = get_dir_name(opts.fargs[1])
 	end
@@ -50,7 +50,7 @@ end, {
 			end
 		end
 
-		for key, _ in pairs(config.quick_paths) do
+		for key, _ in pairs(config.quick_maps) do
 			if argLead == "" or string.sub(key, 0, string.len(argLead)) == argLead then
 				table.insert(keys, key)
 			end
