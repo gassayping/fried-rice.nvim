@@ -1,6 +1,6 @@
 # `Fried Rice.nvim`
 
-Fried rice is a quick and easy meal to cook. This plugin enables you to quickly edit your config files from anywhere in your filesystem.
+Fried rice is a quick and easy meal to cook. This plugin makes it easy to quickly edit your config files from anywhere in your filesystem.
 
 ## Usage
 
